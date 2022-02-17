@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Figuras Geometricas</title>
+    <style>
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --balance: #bc6a22;
+            --important: #864414;
+            --commonly: #ebae42;
+            --light: #ffcd55;
+            --sub: #edeace;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--light);
+        }
+        .title {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .title h1 {
+            font-weight: var(--lg);
+            color: var(--white);
+            background-color: var(--important);
+            margin: 0;
+            border-radius: 0 0 24px 24px;
+            width: 100%;
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+        .title div {
+            color: var(--sub);
+            background-color: var(--balance);
+            margin: 0;
+            border-radius: 0 0 24px 24px;
+            width: 95%;
+        }
+        .title div p {
+            margin: 4px;
+            padding: 4px;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .square {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            text-align: center;
+
+            background-color: var(--balance);
+            border-radius: 16px;
+            margin-top: 4px;
+            padding: 12px;
+            padding-top: 4px;
+        }
+        .square h2 {
+            margin: 10px;
+        }
+        .square form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .square form label {
+            margin-bottom: 4px;
+        }
+        .square form input {
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            width: 44%;
+            margin-top: 4px;
+            outline: 0;
+        }
+        .button button{
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 8px;
+            background-color: var(--commonly);
+        }
+
+        .triangle {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            text-align: center;
+
+            background-color: var(--balance);
+            border-radius: 16px;
+            margin-top: 4px;
+            padding: 12px;
+            padding-top: 4px;
+        }
+        .triangle h2 {
+            margin: 10px;
+        }
+        .triangle form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .triangle form input {
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            width: 44%;
+            margin: 4px;
+            outline: 0;
+        }
+        .triangle form div button {
+            margin-bottom: 12px;
+        }
+
+        .circle {
+            display: grid;
+            grid-template-rows: 1fr auto;
+            text-align: center;
+            background-color: var(--balance);
+            border-radius: 16px;
+            margin-top: 4px;
+            padding: 12px;
+            padding-top: 4px;
+        }
+        .circle h2 {
+            margin: 10px;
+        }
+        .circle form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .circle form input {
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            width: 44%;
+            margin-top: 4px;
+            background-color: var(--white);
+            outline: 0;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="title">
+        <h1>Figuras Geometricas</h1>
+        <div>
+            <p class="header-p">Primeros Ejemplos</p>
+        </div>
+    </header>
+    <div class="container">
+        <div class="square">
+            <h2>Area y perimetro de un cuadrado</h2>
+            <form action="">
+                <label for="inputCuadrado">Escribe cuanto mide cada lado del cuadrado</label>
+                <input type="number" id="inputCuadrado">
+                <div class="button">
+                    <button type="button" onclick="Cuadrado()">
+                        Calcular el perimetro
+                    </button>
+                    <button type="button" onclick="aCuadrado()">
+                        Calcular el area
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="triangle">
+            <h2>Area y perimetro de un triangulo</h2>
+            <form><!--aaaa-->
+                <label for="inputTriangulo1">Escribe cuanto mide cada lado del triangulo</label>
+                <div>
+                    <label for="inputTriangulo1"> Lado 1: </label>
+                    <input type="number" id="inputTriangulo1">
+                </div>
+                <div>
+                    <label for="inputTriangulo2">Lado 2: </label>
+                    <input type="number" id="inputTriangulo2">
+                </div>
+                <div>
+                    <label for="inputTriangulo3">Lado 3: </label>
+                    <input type="number" id="inputTriangulo3">
+                </div>
+                <div class="button">
+                    <button type="button" onclick="Triangulo()">Calcular el perimetro</button>
+                </div>
+                <label for="inputTrianguloAltura">Escribe la altura del triangulo (si desea el area)</label>
+                <input type="number" id="inputTrianguloAltura">
+                <div class="button">
+                    <button type="button" onclick="aTriangulo()">Calcular el area</button>
+                </div>
+            </form>
+        </div>
+        <div class="circle">
+            <h2>Area y perimetro de un circulo</h2>
+            <form>
+                <label for="inputCirculo1">Escribe cuanto mide el radio</label>
+                <input type="number" id="inputCirculo1">
+                <div class="button">
+                    <button type="button" onclick="Circulo()">Calcula la circunferencia</button>
+                    <button type="button" onclick="aCirculo()">Calcula el area</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="FigurasGeometricas.js"></script>
+</body>
+</html>
