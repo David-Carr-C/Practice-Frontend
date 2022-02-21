@@ -100,3 +100,9 @@ function aCirculo() {
     var r = document.getElementById("inputCirculo1").value;
     alert(areaCirculo(r));
 }
+
+function reset() {
+    document.querySelector("#form-square").reset();
+    document.querySelector("#form-triangle").reset();
+    document.querySelector("#form-circle").reset();
+}
